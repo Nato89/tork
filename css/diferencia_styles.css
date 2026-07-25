@@ -1,0 +1,117 @@
+/* Sección diferencia */
+.diferencia {
+    width: 100%;
+    max-width: 1440px;
+    height: 795px;
+    margin: 0 auto;
+    
+    /* Configuración de la imagen de fondo */
+    background-image: url('../assets/Images/imagen_fondo_diferencia.png'); 
+    background-size: cover;          
+    background-position: center;     
+    background-repeat: no-repeat;    
+    
+    /* Preparamos el contenedor flex para posicionar el título y las tarjetas */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    box-sizing: border-box;
+    position: relative;       
+}
+
+/* Texto lo que hace diferente a Tork */
+.titulo {
+    max-width: 859px;
+    height: 152px;
+    
+    /* Ubicación exacta: 50px top y 120px left desde .diferencia */
+    margin-top: 50px;
+    margin-left: 120px;
+    
+    display: flex;
+    align-items: flex-start; 
+}
+
+/* Título h2 interno */
+.titulo h2 {
+    width: 100%;              /* Ocupa el ancho del div para forzar el salto */
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 76px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* ============================================== */
+/* TARJETAS (Estructura base)                     */
+/* ============================================== */
+.tarjeta_diferencia {
+    position: absolute;
+    top: 330px;
+    width: 380px;
+}
+
+/* ============================================== */
+/* POSICIONAMIENTO Y ORDEN (Solo CSS)             */
+/* ============================================== */
+
+/* 1. Tarjeta que contiene el icono de EFICIENCIA -> A la izquierda */
+.tarjeta_diferencia:has(img[alt*="eficiencia"]) {
+    left: 120px;
+}
+
+/* 2. Tarjeta que contiene el icono de EXPERIENCIA -> A la derecha */
+.tarjeta_diferencia:has(img[alt*="experiencia"]) {
+    left: 530px;
+}
+
+
+/* Tarjetas */
+.icono_tarjeta {
+    position: absolute;
+    top: -30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #0066B2;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+
+.contenido_tarjeta {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 50px 30px 30px 30px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 1;
+    
+    /* Mismo alto exacto para ambas tarjetas */
+    height: 280px; 
+    box-sizing: border-box;
+}
+
+.contenido_tarjeta h3 {
+    color: #003366;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+
+.contenido_tarjeta p {
+    color: #065E99;
+    font-size: 18px;
+    line-height: 26px;
+    margin: 0;
+}
+
+.text_bold_blue {
+    color: #0066B2;
+    font-weight: 700;
+}
