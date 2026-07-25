@@ -3,4 +3,5 @@
 /* Aquí se importarán las hojas de estilo de las demás secciones */
 @import 'hero_styles.css';
 @import 'imp_styles.css';
-@import 'diferencia_styles.css'
+@import 'diferencia_styles.css';
+@import 'soluciones_styles.css';

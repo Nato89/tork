@@ -1,0 +1,105 @@
+.soluciones {
+    width: 100%;
+    max-width: 1440px;
+    height: 838px;
+    margin: 0 auto;
+    padding-top: 100px; 
+    box-sizing: border-box;
+    background-color: #FFFFFF;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Cuadro contenedor titulo */
+.slns_titulo_container {
+    width: 792px;
+    height: 152px;
+    text-align: center;
+    box-sizing: border-box;   
+}
+
+/* Titulo en azul*/
+.slns_titulo_container h2 {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 76px;
+    color: #003A81;
+    margin: 0;
+}
+
+/* titulo en verde */
+.slns_titulo_container h2 span {
+    color: #007D32;
+}
+
+/* El cuadro del texto */
+.slns_text_container {
+    width: 792px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* El texto P adentro */
+.slns_text_container p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #002952;
+    margin: 0;
+}
+
+/* CONTENEDOR DE TARJETAS */
+.contenedor_tarjetas {
+    width: 1200px;
+    height: 334px;
+    margin-top: 64px;
+    margin-left: auto;  
+    margin-right: auto;
+    display: flex;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+/* TARJETA INDIVIDUAL (EVITA QUE SE ESTIREN LAS FOTOS) */
+.tarjeta_solucion {
+    width: 282px;
+    height: 334px;
+    background-color: #F3F7FB;
+    border-radius: 8px;
+    padding: 16px 16px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+/* IMAGEN DE LA TARJETA */
+.imagen_tarjeta {
+    width: 250px;
+    height: 222px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.imagen_tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* TÍTULO DE LA TARJETA */
+.tarjeta_solucion h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #003A81;
+    margin: 0;
+}
+
+/* Tarjetas texto color */
+section.soluciones article.tarjeta_solucion h3 {
+    color: #003A81;
+}
