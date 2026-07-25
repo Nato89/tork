@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TORK - Landing Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- CABECERA-HEADER / BARRA DE NAVEGACION-NAVBAR -->
+     <header class="header">
+        <div class="header_container">
+          <div class="logo-search"> 
+                <div class="header_logo">
+                    <img src="assets/Logotipos/logotipo.svg" alt="Logo TORK" class="logo_img">
+                </div>
+                
+                <div class="header_search">
+                    <input type="text" placeholder="¿Qué buscas hoy?" aria-label="Buscar">
+                    <img src="assets/Images/lupa.svg" alt="Icono de búsqueda" class="search_icon">
+                </div> 
+            </div>
+
+         <nav>
+            <a href="#" class="nav_link">Ayuda</a>
+            <a href="#" class="nav_link">
+                <img src="assets/Images/account_circle.png" alt="Icono de usuario" class="nav_icon">        
+                Inicia sesión
+            </a>
+            <button class="nav_cart-btn" type="button">
+                <img src="assets/Images/cart.svg" alt="Icono de carrito" class="cart_icon">
+                <span class="cart_count">0</span>
+            </button>
+         </nav>
+        </div>
+     </header>
+
+     <!-- Sección HERO -->
+      <main>
+        <section class="hero_section">            
+                
+            <div class="hero_brand-tag">
+                <img src="assets/Logotipos/logotipo.svg" alt="Logo TORK Think Ahead" class="hero_logo_img"> 
+            </div> 
+            <div class="hero_text-container">
+                <h1 class="hero_text">
+                    Higiene profesional para los desafíos de hoy y mañana.
+                </h1>
+            </div>
+                
+            <!-- Recuadro quiero registrarme flotante -->
+            <div class="hero_card">
+                <div class="card_content">
+                    <div class="card_text-container">
+                        <p class="card_text">
+                            Registrate y descarga la guía de optimización de costos
+                        </p>
+                    </div>
+                    <button class="card_button" type="button">                            
+                        Quiero registrarme
+                    </button>
+                </div>
+            </div>
+            
+        </section>
+      </main>
+
+        <script src="js/main.js"></script>      
+      </body>
+      </html>
+
+
+      
+/* Texto blanco y tipografía helvetica */
+:root {
+  --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}

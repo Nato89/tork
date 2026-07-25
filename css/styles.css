@@ -1,0 +1,239 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografia global: helvetica */
+:root {
+  --font-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Regla global: Todo texto en el documento nace blanco */
+body, 
+a, 
+button, 
+input, 
+select, 
+textarea, 
+h1, h2, h3, h4, h5, h6, p, span {
+  color: #FFFFFF;
+  font-family: var(--font-primary);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header - Recuadro azul */
+.header {
+  width: 100%;
+  height: 86px;
+  background-color: #003366;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+}
+
+/* Recuadro de navbar */
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  width: 100%;
+}
+
+/* Logo y recuadro de busqueda */
+.logo-search {
+  display: flex;
+  align-items: center;
+  gap: 24px; 
+}
+
+/* Logo Tork */
+.header_logo {
+  width: 71px;
+  height: 48px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header_search {
+  width: 540px;
+  height: 48px;
+  border-radius: 48px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    background-color: #FFFFFF; /* Fondo blanco para ver el diseño redondeado */
+}
+
+/* Placeholder */
+.header_search input::placeholder {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+/* Quitar borde negro del texto */
+.header_search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+/* Menu derecho del nav bar */
+header nav {
+  width: 365px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Mantiene todo bien tirado a la derecha */
+  gap: 16px;
+  opacity: 1;
+}
+
+/* Alinea la foto de perfil con el texto de Inicia sesión */
+.nav_link {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre el ícono de perfil y el texto */
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Boton carrito */
+.nav_cart-btn {
+  display: flex;
+  align-items: center;
+}
+
+.nav_cart-btn {
+  width: 89px;
+  height: 48px;
+  opacity: 1;
+  gap: 8px;
+  padding: 12px 24px;
+  
+  
+  /* Alineación interna */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Estilos del botón */
+   border: none;             
+  border-radius: 24px;     
+  cursor: pointer;
+}
+
+/* Contador del carrito */
+.cart_count {
+  color: #003366; 
+  font-size: 16px; 
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Imagen de fondo */
+.hero_section {
+    width: 100%;
+    height: 632px;
+
+    /* Imagen */
+    background-image: url('../assets/Images/fondo-hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+
+/* --- LOGO TORK --- */
+.hero_brand-tag {
+ position: absolute;   
+ width: 137px;
+ height: 93px;
+ top: 177px;
+ left: 128px;
+}
+
+/* Imagen del logo */
+.hero_logo_img {  
+  width: 100%;
+  height: 100%;
+}
+
+/* --- CONTENEDOR DEL TEXTO "Higiene..." --- */
+.hero_text-container {
+ position: absolute;   
+ width: 689px;
+ height: 228px;
+ top: 294px;
+ left: 128px; 
+}
+
+.hero_text {
+  font-size: 64px;       
+  font-weight: 500;      
+  line-height: 76px;      
+  letter-spacing: 0;
+}
+
+/* --- RECUADRO AZUL FLOTANTE (Derecha) --- */
+.hero_card {
+  width: 298px;
+  height: 208px;
+  padding: 20px 24px;
+  border-radius: 20px;
+  background-color: #007ACC;
+  box-sizing: border-box;
+  position: absolute;
+  top: 460px;
+  right: 24px;
+}
+
+.card_content {
+  width: 250px;
+  height: 168px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.card_text {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.card_button {
+  width: 204px;
+  height: 48px;
+  padding: 12px 16px;
+  border-radius: 28px;
+  background-color: #ffffff;
+  color: #003366;
+  border: none;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  align-self: center;
+  box-sizing: border-box;
+}
