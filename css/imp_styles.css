@@ -1,0 +1,117 @@
+.impulsando {
+    width: 100%;
+    max-width: 1440px;     
+    height: 920px;         
+    background-color: #F3F7FB;
+    margin: 0 auto;        
+    
+    /* Layout flexbox para alinear el encabezado y el video verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 2rem;       
+    box-sizing: border-box;
+}
+
+.imp_text {
+    width: 100%;
+    max-width: 889px;
+    height: 120px;    
+    margin-top: 50px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;    
+    text-align: center;
+}
+
+/* Titulo impulsando mejores negocios */
+.imp_text_title {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 76px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin: 0; 
+}
+
+/* Colores específicos según el Figma */
+.text_blue {
+    color: #003A81;
+}
+
+.text_green {
+    color: #007D32;
+}
+
+/* Texto Descubre como Trok.... */
+.imp_text_description {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #002952;
+    margin: 0; 
+}
+
+/* Contenedor del video */
+.imp_video_container {
+    width: 100%;
+    max-width: 1200px;        
+    height: 640px;            
+    margin-top: 60px;         
+    border-radius: 24px;      
+    overflow: hidden;    
+    position: relative;       
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+imp_video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       
+    display: block;
+}
+
+/* Botón de play */
+.imp_play_btn {
+    position: absolute;       
+    z-index: 10;
+    width: 120px;             
+    height: 120px;              
+    background: transparent;  
+    border: none;             
+    padding: 0;
+    cursor: pointer;          
+    display: flex;
+    flex-direction: column;   
+    align-items: center;      
+    justify-content: center;
+    gap: 8px;                
+    transition: transform 0.2s ease-in-out; 
+}
+
+/* Vamos a darle interacción con un hover */
+.imp_play_btn:hover {
+    transform: scale(1.05);  
+}
+
+/* Para que la imagen de play se acomode a su contenedor */
+.imp_play_image_button {
+    width: auto;              
+    display: block;
+}
+
+/* Texto reproducir video */
+.imp_play_text_ {
+    width: 135px;             
+    height: 24px;
+    color: #FFFFFF;           
+    font-size: 16px;          
+    font-weight: 700;
+}

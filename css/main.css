@@ -1,0 +1,5 @@
+/* Este será el archivo principal de css */
+
+/* Aquí se importarán las hojas de estilo de las demás secciones */
+@import 'hero_styles.css';
+@import 'imp_styles.css';
