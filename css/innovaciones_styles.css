@@ -1,0 +1,197 @@
+/* SECCIÓN CONOCE NUESTRAS INNOVACIONES */
+.innovaciones {
+    width: 100%;
+    max-width: 1440px;
+    height: 991px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Contenedor del título */
+.inv_titulo_container {
+    width: 898px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    box-sizing: border-box;
+}
+
+/* Título en azul */
+.inv_titulo_container h2 {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 100px;
+    letter-spacing: 0;
+    color: #003A81;
+    margin: 0;
+}
+
+/* "Innovaciones" en verde */
+.inv_titulo_container h2 span {
+    color: #007D32;
+}
+
+/* FLECHAS DE NAVEGACIÓN */
+.inv_flechas {
+    position: absolute;
+    top: 64px;
+    right: 120px;
+    display: flex;
+    gap: 16px;
+}
+
+.inv_flecha {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.inv_flecha img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* CARRUSEL (ventana visible: desde left 120px hasta el borde de la sección) */
+.inv_carrusel {
+    width: 1320px;
+    height: 565px;
+    position: absolute;
+    top: 218px;
+    left: 120px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Riel que se desplaza (5 tarjetas de 384px + 4 gaps de 24px = 2016px) */
+.inv_track {
+    width: 2016px;
+    height: 565px;
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s ease;
+}
+
+/* TARJETA DE PRODUCTO */
+.inv_tarjeta {
+    width: 384px;
+    height: 565px;
+    flex: 0 0 384px;
+    position: relative;
+    background-color: #F3F7FB;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* IMAGEN DEL PRODUCTO */
+.inv_imagen {
+    width: 336px;
+    height: 248px;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    overflow: hidden;
+}
+
+.inv_imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* TÍTULO + TEXTO DEL PRODUCTO */
+.inv_contenido {
+    width: 336px;
+    height: 144px;
+    position: absolute;
+    top: 296px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+.inv_contenido h3 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #242424;
+    margin: 0;
+}
+
+.inv_contenido p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #5C5C5C;
+    margin: 0;
+}
+
+/* ENLACE DESCARGAR INFO DE PRODUCTO */
+.inv_descarga {
+    width: 336px;
+    height: 48px;
+    position: absolute;
+    top: 493px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-radius: 28px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.inv_descarga_texto {
+    width: 216px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    color: #003366;
+}
+
+.inv_descarga_icono {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+}
+
+/* BOTÓN CONTÁCTANOS POR WHATSAPP */
+.inv_whatsapp {
+    width: 336px;
+    height: 88px;
+    position: absolute;
+    top: 843px;
+    left: 552px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 24px;
+    box-sizing: border-box;
+}
+
+.inv_whatsapp img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
