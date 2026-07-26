@@ -11,7 +11,15 @@
     <!-- CABECERA-HEADER / BARRA DE NAVEGACION-NAVBAR -->
      <header class="header">
         <div class="header_container">
-          <div class="logo-search"> 
+
+          <!-- Botón hamburguesa (solo visible en móvil) -->
+          <button class="header_menu_btn" type="button" id="header_menu_btn" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="logo-search">
                 <div class="header_logo">
                     <img src="assets/Logotipos/logotipo.svg" alt="Logo TORK" class="logo_img">
                 </div>
@@ -23,16 +31,22 @@
             </div>
 
          <nav>
-            <a href="#" class="nav_link">Ayuda</a>
+            <a href="#" class="nav_link nav_link--ayuda">Ayuda</a>
             <a href="#" class="nav_link">
-                <img src="assets/Iconos/account_circle.png" alt="Icono de usuario" class="nav_icon">        
-                Inicia sesión
+                <img src="assets/Iconos/account_circle.png" alt="Icono de usuario" class="nav_icon">
+                <span class="nav_link_texto">Inicia sesión</span>
             </a>
             <button class="nav_cart-btn" type="button">
                 <img src="assets/Iconos/cart.svg" alt="Icono de carrito" class="cart_icon">
                 <span class="cart_count">0</span>
             </button>
          </nav>
+        </div>
+
+        <!-- Menú desplegable del botón hamburguesa (solo móvil) -->
+        <div class="header_menu_movil" id="header_menu_movil">
+            <a href="#" class="nav_link">Ayuda</a>
+            <a href="#" class="nav_link">Inicia sesión</a>
         </div>
      </header>
 
@@ -61,6 +75,12 @@
                         Quiero registrarme
                     </button>
                 </div>
+            </div>
+
+            <!-- Indicador de scroll (solo visible en móvil) -->
+            <div class="hero_desliza">
+                <p>Desliza para ver todo el contenido</p>
+                <span class="hero_desliza_flecha" aria-hidden="true"></span>
             </div>
 
         </section>
@@ -445,6 +465,54 @@
         </div>
 
       </footer>
+
+      <!-- FORMULARIO DE REGISTRO -->
+      <div id="modal_registro" class="modal_overlay">
+        <div class="modal_contenedor">
+        
+            <!-- Botón de Cierre (X) -->
+            <button type="button" class="modal_cerrar js_cerrar_registro" aria-label="Cerrar ventana">
+                &times;
+            </button>
+
+            <div class="title_form_container">                
+                <h2 class="modal_titulo">Completa tus datos para acceder al contenido completo.</h2>
+
+                <!-- Formulario -->
+                <form id="formulario_registro" class="modal_form">
+                    
+                    <div class="modal_fila_doble">
+                        <div class="modal_campo">
+                            <input type="text" id="input_nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="modal_campo">
+                            <input type="text" id="input_apellido" placeholder="Apellido" required>
+                        </div>
+                    </div>
+
+                    <div class="modal_campo">
+                        <input type="tel" id="input_celular" placeholder="Celular" required>
+                    </div>
+
+                    <div class="modal_campo">
+                        <input type="email" id="input_email" placeholder="Correo empresarial" required>
+                    </div>
+
+                    <div class="modal_habeas_data">
+                        <input type="checkbox" id="input_habeas" required>
+                        <label for="input_habeas">
+                            Al enviar el formulario, acepto la política de <a href="#" target="_blank">Habeas Data</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="modal_btn_submit">
+                        <img src="assets/Iconos/Button.png" alt="Registrarme">
+                    </button>
+
+                </form>
+            </div>
+        </div>
+      </div>
 
         <script src="js/main.js"></script>
       </body>

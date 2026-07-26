@@ -9,3 +9,9 @@
 @import 'innovaciones_styles.css';
 @import 'impulsa_styles.css';
 @import 'footer_styles.css';
+
+/* Responsive */
+@import 'responsive.css';
+
+/* Formulario */
+@import 'form_styles.css';

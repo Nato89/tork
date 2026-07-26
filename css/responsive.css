@@ -1,0 +1,836 @@
+/* RESPONSIVE */
+/* Ninguna imagen se sale de su contenedor */
+img {
+    max-width: 100%;
+}
+
+/* ESCRITORIO ANGOSTO (max-width: 1439px) */
+@media (max-width: 1439px) {
+
+    /* Header */
+    .header_container {
+        padding: 0 40px;
+    }
+
+    .header_search {
+        width: 100%;
+        max-width: 540px;
+    }
+
+    /* Los títulos no deben quedar debajo de las flechas */
+    .res_titulo_container,
+    .inv_titulo_container {
+        width: auto;
+        height: auto;
+        max-width: calc(100% - 360px);
+    }
+
+    /* Soluciones: las 4 tarjetas se reparten el ancho disponible */
+    .contenedor_tarjetas {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 32px;
+    }
+
+    .tarjeta_solucion {
+        width: auto;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .imagen_tarjeta {
+        width: 100%;
+    }
+
+    /* Resultados: el carrusel se adapta y la imagen cede el ancho */
+    .res_carrusel {
+        width: calc(100% - 240px);
+    }
+
+    .res_slide {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .res_imagen {
+        width: auto;
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .res_texto {
+        flex: 0 0 384px;
+    }
+
+    /* Innovaciones: el carrusel llega hasta el borde derecho */
+    .inv_carrusel {
+        width: auto;
+        right: 0;
+    }
+
+    .inv_track {
+        width: max-content;
+    }
+
+    /* Impulsa: la foto se ancla a la derecha y guarda su proporción */
+    .imps_texto_container {
+        width: 43%;
+        max-width: 516px;
+        height: auto;
+    }
+
+    .imps_imagen {
+        left: auto;
+        right: 0;
+        width: 49.17%;
+    }
+
+    /* Footer: columnas un poco más juntas */
+    .ftr_fila {
+        gap: 56px;
+    }
+}
+
+
+/* 1. TABLETS Y LAPTOPS PEQUEÑAS (max-width: 1024px) */
+@media (max-width: 1024px) {
+
+    /* ---------- HEADER ---------- */
+    .header {
+        height: auto;
+        padding: 16px 0;
+    }
+
+    .header_container {
+        padding: 0 32px;
+        gap: 24px;
+    }
+
+    .header_search {
+        max-width: 320px;
+    }
+
+    header nav {
+        width: auto;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero_section {
+        height: auto;
+        padding: 48px 32px 64px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+    }
+
+    .hero_brand-tag,
+    .hero_text-container,
+    .hero_card {
+        position: static;
+    }
+
+    .hero_text-container {
+        width: 100%;
+        max-width: 689px;
+        height: auto;
+    }
+
+    .hero_text {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    .hero_card {
+        width: 100%;
+        max-width: 298px;
+    }
+
+    /* ---------- IMPULSANDO (video) ---------- */
+    .impulsando {
+        height: auto;
+        padding: 48px 32px;
+    }
+
+    .imp_text {
+        height: auto;
+        margin-top: 0;
+    }
+
+    .imp_video_container {
+        height: auto;
+        aspect-ratio: 1200 / 640;
+        margin-top: 40px;
+    }
+
+    /* ---------- DIFERENCIA ---------- */
+    .diferencia {
+        height: auto;
+        padding: 48px 32px 80px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .titulo {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .tarjeta_diferencia,
+    .tarjeta_diferencia:has(img[alt*="eficiencia"]),
+    .tarjeta_diferencia:has(img[alt*="experiencia"]) {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: calc(50% - 20px);
+        max-width: 380px;
+        margin-top: 40px;
+    }
+
+    .contenido_tarjeta {
+        height: auto;
+    }
+
+    /* ---------- SOLUCIONES ---------- */
+    .soluciones {
+        height: auto;
+        padding: 48px 32px;
+    }
+
+    .slns_titulo_container,
+    .slns_text_container {
+        width: 100%;
+        max-width: 792px;
+        height: auto;
+    }
+
+    .contenedor_tarjetas {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .tarjeta_solucion {
+        width: auto;
+        height: auto;
+    }
+
+    /* ---------- RESULTADOS ---------- */
+    .resultados {
+        height: auto;
+        padding: 50px 32px 64px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .res_titulo_container {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .res_flechas {
+        position: static;
+        align-self: flex-end;
+        margin-top: 24px;
+    }
+
+    .res_carrusel {
+        position: static;
+        width: 100%;
+        height: auto;
+        transform: none;
+        margin-top: 32px;
+    }
+
+    .res_slide {
+        height: auto;
+    }
+
+    .res_imagen {
+        height: 420px;
+    }
+
+    .res_texto {
+        flex: 0 0 320px;
+        height: auto;
+        min-height: 420px;
+    }
+
+    .res_texto p {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    /* ---------- INNOVACIONES ---------- */
+    .innovaciones {
+        height: auto;
+        padding: 50px 32px 64px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inv_titulo_container {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .inv_flechas {
+        position: static;
+        align-self: flex-end;
+        margin-top: 24px;
+    }
+
+    .inv_carrusel {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 32px;
+    }
+
+    .inv_whatsapp {
+        position: static;
+        align-self: center;
+        margin-top: 48px;
+    }
+
+    /* ---------- IMPULSA ---------- */
+    .impulsa {
+        height: auto;
+        padding: 48px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .imps_texto_container,
+    .imps_boton,
+    .imps_imagen {
+        position: static;
+    }
+
+    .imps_texto_container {
+        width: 100%;
+        max-width: 516px;
+        height: auto;
+    }
+
+    .imps_imagen {
+        width: 100%;
+        height: 360px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+        height: auto;
+        padding: 48px 32px;
+    }
+
+    .ftr_fila {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 48px;
+    }
+
+    .ftr_marca,
+    .ftr_columna_servicio,
+    .ftr_columna_2,
+    .ftr_columna_3,
+    .ftr_columna_iconos {
+        height: auto;
+    }
+
+    .ftr_legal {
+        height: auto;
+        margin-top: 48px;
+    }
+
+    /* Títulos de sección a 48px en este breakpoint */
+    .imp_text_title,
+    .titulo h2,
+    .slns_titulo_container h2,
+    .res_titulo_container h2,
+    .inv_titulo_container h2 {
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+
+/* 2. TABLETS VERTICALES / MÓVILES GRANDES (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* ---------- HEADER ----------*/
+    .header {
+        height: auto;
+        padding: 0;
+    }
+
+    .header_container {
+        height: 112px;
+        padding: 8px 24px;
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 8px;
+    }
+
+    .header_menu_btn {
+        display: flex;
+        order: 1;
+    }
+
+    .logo-search {
+        display: contents;
+    }
+
+    .header_logo {
+        order: 2;
+        width: 59px;
+        height: 40px;
+    }
+
+    header nav {
+        order: 3;
+        width: auto;
+        height: 40px;
+        margin-left: auto;
+        gap: 12px;
+    }
+
+    .nav_cart-btn {
+        height: 40px;
+    }
+
+    .header_search {
+        order: 4;
+        width: 100%;
+        max-width: none;
+    }
+
+    /* En móvil el menú queda en el hamburguesa: solo se ven los iconos */
+    .nav_link--ayuda,
+    .nav_link_texto {
+        display: none;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero_section {
+        height: 676px;
+        padding: 0 24px 32px;
+        justify-content: flex-start;
+        gap: 0;
+    }
+
+    .hero_card {
+        order: -1;
+        width: calc(100% + 48px);
+        max-width: none;
+        height: 58px;
+        margin: 0 -24px 32px;
+        border-radius: 0;
+        padding: 8px 24px;
+    }
+
+    .card_content {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .card_text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .card_button {
+        width: auto;
+        height: 34px;
+        flex-shrink: 0;
+        align-self: center;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    /* El bloque logo + titular se empuja hacia la parte baja de la foto */
+    .hero_brand-tag {
+        margin-top: auto;
+    }
+
+    .hero_text {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .hero_desliza {
+        display: flex;
+        margin-top: 32px;
+    }
+
+    /* ---------- IMPULSANDO ---------- */
+    .impulsando {
+        padding: 40px 24px;
+    }
+
+    .imp_play_btn {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* ---------- DIFERENCIA ---------- */
+    .diferencia {
+        height: 1208px;
+        padding: 40px 24px 64px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 100px;
+
+        /* La foto llena los 360x1208 y se recorta desde el centro hacia
+           afuera: sin franjas de color. */
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* El margen automático es el que empuja las tarjetas hacia abajo */
+    .titulo {
+        width: 100%;
+        height: auto;
+        margin: 0 0 auto 0;
+    }
+
+    /* En móvil el título parte donde le quepa, no en el <br> del diseño ancho */
+    .titulo h2 br {
+        display: none;
+    }
+
+    .tarjeta_diferencia,
+    .tarjeta_diferencia:has(img[alt*="eficiencia"]),
+    .tarjeta_diferencia:has(img[alt*="experiencia"]) {
+        width: 100%;
+        max-width: none;
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+
+    /* ---------- SOLUCIONES ---------- */
+    .soluciones {
+        padding: 40px 24px;
+    }
+
+    /* ---------- RESULTADOS: imagen arriba, texto abajo ---------- */
+    .resultados {
+        padding: 40px 24px 56px;
+    }
+
+    .res_slide {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .res_imagen {
+        width: 100%;
+        height: 280px;
+        flex: none;
+    }
+
+    .res_texto {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        flex: none;
+        padding: 32px 24px;
+    }
+
+    .res_texto p {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    /* ---------- INNOVACIONES: la tarjeta pasa a flujo normal ---------- */
+    .innovaciones {
+        padding: 40px 24px 56px;
+    }
+
+    .inv_track {
+        width: max-content;
+        height: auto;
+    }
+
+    .inv_tarjeta {
+        width: 300px;
+        flex: 0 0 300px;
+        height: auto;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .inv_imagen,
+    .inv_contenido,
+    .inv_descarga {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .inv_imagen {
+        height: 200px;
+    }
+
+    .inv_contenido h3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .inv_descarga {
+        margin-top: auto;
+    }
+
+    .inv_descarga_texto {
+        width: auto;
+        text-align: left;
+    }
+
+    /* ---------- IMPULSA ---------- */
+    /* Sin padding arriba: la foto va pegada al borde superior */
+    .impulsa {
+        padding: 0 24px 40px;
+    }
+
+    .imps_texto_container h2 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    /* La foto va de primera y ocupa todo el ancho de la pantalla:
+       se sale del padding con márgenes negativos */
+    .imps_imagen {
+        order: -1;
+        width: calc(100% + 48px);
+        height: 908px;
+        margin: 0 -24px;
+    }
+
+    .imps_imagen img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .imps_boton {
+        align-self: center;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+        padding: 40px 24px 24px;
+    }
+
+    .ftr_fila {
+        gap: 40px;
+    }
+
+    /* El logo pasa a la derecha, en línea con "Servicio al cliente" */
+    .ftr_marca {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .ftr_logo {
+        order: 2;
+        flex-shrink: 0;
+    }
+
+    /* Títulos de sección a 36px en este breakpoint */
+    .imp_text_title,
+    .titulo h2,
+    .slns_titulo_container h2,
+    .res_titulo_container h2,
+    .inv_titulo_container h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+/* 3. CELULARES PEQUEÑOS (max-width: 480px) */
+@media (max-width: 480px) {
+
+    /* ---------- HEADER ---------- */
+    .header_container {
+        padding: 8px 16px;
+    }
+
+    header nav {
+        gap: 10px;
+    }
+
+    .nav_cart-btn {
+        width: auto;
+        padding: 8px 14px;
+    }
+
+    .header_menu_movil {
+        padding: 16px 16px 24px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero_section {
+        padding: 0 16px 32px;
+    }
+
+    .hero_card {
+        width: calc(100% + 32px);
+        margin: 0 -16px 24px;
+        padding: 8px 16px;
+    }
+
+    .card_content {
+        gap: 12px;
+    }
+
+    .hero_brand-tag {
+        width: 110px;
+        height: 75px;
+    }
+
+    .hero_text {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    /* ---------- MÁRGENES LATERALES COMUNES ---------- */
+    .impulsando,
+    .diferencia,
+    .soluciones,
+    .resultados,
+    .innovaciones,
+    .impulsa {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* ---------- IMPULSANDO ---------- */
+    .imp_play_btn {
+        width: 72px;
+        height: 72px;
+    }
+
+    .imp_play_text_ {
+        width: auto;
+        font-size: 14px;
+    }
+
+    /* ---------- SOLUCIONES: una sola columna ---------- */
+    .contenedor_tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .imagen_tarjeta {
+        height: 200px;
+    }
+
+    /* ---------- RESULTADOS ---------- */
+    .res_imagen {
+        height: 220px;
+    }
+
+    .res_texto {
+        padding: 24px 20px;
+    }
+
+    .res_texto p {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .res_flecha,
+    .inv_flecha {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* ---------- INNOVACIONES ---------- */
+    .inv_tarjeta {
+        width: 260px;
+        flex-basis: 260px;
+    }
+
+    .inv_imagen {
+        height: 170px;
+    }
+
+    .inv_contenido h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .inv_whatsapp {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    /* ---------- IMPULSA ---------- */
+    .imps_texto_container h2 {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .imps_texto_container p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* El sangrado se ajusta al padding de 16px de este breakpoint */
+    .imps_imagen {
+        width: calc(100% + 32px);
+        margin: 0 -16px;
+    }
+
+    /* ---------- FOOTER: una sola columna ---------- */
+    .footer {
+        padding: 32px 16px 24px;
+    }
+
+    .ftr_fila {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .ftr_columna_servicio,
+    .ftr_columna_2,
+    .ftr_columna_3,
+    .ftr_columna_iconos {
+        width: 100%;
+    }
+
+    .ftr_legal {
+        margin-top: 32px;
+    }
+
+    .ftr_legal p {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    /* Títulos de sección a 28px en este breakpoint */
+    .imp_text_title,
+    .titulo h2,
+    .slns_titulo_container h2,
+    .res_titulo_container h2,
+    .inv_titulo_container h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}

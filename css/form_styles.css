@@ -1,0 +1,192 @@
+/* Contenedor principal (Overlay) */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* #000000 al 60% */
+    backdrop-filter: blur(32px);
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Solo se muestra cuando JS le pone la clase esta_abierto */
+.modal_overlay.esta_abierto {
+    display: flex;
+}
+
+/* Cuadro del Formulario */
+.modal_contenedor {
+    width: 708px;
+    height: 632px;
+    background-color: #D5ECF9;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Botón de Cierre (X) */
+.modal_cerrar {
+    position: absolute;
+    top: 24px;
+    left: 660px;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: #0A2540;
+}
+
+/* Bloque titulo + formulario: 612x456, a 61px del borde superior
+   y 48px del borde izquierdo del .modal_contenedor */
+.title_form_container {
+    position: absolute;
+    top: 61px;
+    left: 48px;
+    width: 612px;
+    height: 456px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Titulo: "Completa tus datos para acceder al contenido completo." */
+.modal_titulo {
+    width: 612px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #003366;
+}
+
+/* El formulario ocupa el resto del bloque, asi el boton queda pegado
+   al borde inferior izquierdo del .title_form_container */
+.modal_form {
+    width: 612px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Grupo de los 4 inputs (nombre, apellido, celular, correo): gap vertical 16 */
+.modal_form > .modal_fila_doble,
+.modal_form > .modal_campo {
+    width: 612px;
+}
+
+.modal_form > .modal_fila_doble + .modal_campo,
+.modal_form > .modal_campo + .modal_campo {
+    margin-top: 16px;
+}
+
+/* Nombre y apellido, uno al lado del otro: 612x48, gap 24 */
+.modal_fila_doble {
+    height: 48px;
+    opacity: 1;
+    display: flex;
+    gap: 24px;
+}
+
+.modal_fila_doble .modal_campo {
+    flex: 1;
+}
+
+/* Celular y correo empresarial, uno debajo del otro: cada uno 612x48, gap 4 */
+.modal_campo {
+    height: 48px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal_campo input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 1px solid #C4D6E3;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    line-height: 22px;
+    color: #242424;
+}
+
+.modal_campo input::placeholder {
+    color: #767676;
+}
+
+/* Habeas data + boton, juntos: 612x132 (24 + gap 60 + 48).
+   margin-top: auto empuja el bloque al fondo del formulario. */
+.modal_habeas_data {
+    width: 612px;
+    height: 24px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    margin-bottom: 60px;
+}
+
+.modal_habeas_data input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.modal_habeas_data label {
+    font-family: var(--font-primary); /* Helvetica Neue */
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0;
+    color: #242424;
+}
+
+.modal_habeas_data label a {
+    color: #003366;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 0;
+}
+
+/* Boton de envio: es la imagen Button.png (192x48) */
+.modal_btn_submit {
+    width: 192px;
+    height: 48px;
+    opacity: 1;
+    padding: 0;
+    border: none;
+    border-radius: 28px;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.modal_btn_submit img {
+    width: 192px;
+    height: 48px;
+    display: block;
+}

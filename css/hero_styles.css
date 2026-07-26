@@ -45,6 +45,41 @@ a {
   width: 100%;
 }
 
+/* Botón hamburguesa: oculto en escritorio, se activa en el responsive */
+.header_menu_btn {
+  display: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.header_menu_btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+}
+
+/* Menú desplegable del hamburguesa: oculto mientras no se abra */
+.header_menu_movil {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 24px 24px;
+  background-color: #003366;
+}
+
+.header_menu_movil.esta_abierto {
+  display: flex;
+}
+
 /* Logo y recuadro de busqueda */
 .logo-search {
   display: flex;
@@ -221,6 +256,43 @@ header nav {
   letter-spacing: 0;
   margin: 0;
   text-align: left;
+}
+
+/* Indicador "Desliza para ver todo el contenido": oculto en escritorio */
+.hero_desliza {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.hero_desliza p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Flecha hacia abajo dibujada con CSS (no hay ícono en assets) */
+.hero_desliza_flecha {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero_desliza_flecha::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  transform: translateY(-2px) rotate(45deg);
 }
 
 .card_button {

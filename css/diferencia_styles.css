@@ -34,7 +34,7 @@
 
 /* Título h2 interno */
 .titulo h2 {
-    width: 100%;              /* Ocupa el ancho del div para forzar el salto */
+    width: 100%;             
     font-size: 64px;
     font-weight: 500;
     line-height: 76px;
@@ -43,18 +43,14 @@
     margin: 0;
 }
 
-/* ============================================== */
 /* TARJETAS (Estructura base)                     */
-/* ============================================== */
 .tarjeta_diferencia {
     position: absolute;
     top: 330px;
     width: 380px;
 }
 
-/* ============================================== */
-/* POSICIONAMIENTO Y ORDEN (Solo CSS)             */
-/* ============================================== */
+/* POSICIONAMIENTO Y ORDEN (Solo CSS)             
 
 /* 1. Tarjeta que contiene el icono de EFICIENCIA -> A la izquierda */
 .tarjeta_diferencia:has(img[alt*="eficiencia"]) {
