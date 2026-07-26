@@ -1,0 +1,137 @@
+/* SECCIÓN RESULTADOS DE NUESTRO RETO TORK */
+.resultados {
+    width: 100%;
+    max-width: 1440px;
+    height: 883px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Contenedor del título */
+.res_titulo_container {
+    width: 859px;
+    height: 152px;
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    box-sizing: border-box;
+}
+
+/* Título en azul */
+.res_titulo_container h2 {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 76px;
+    color: #003366;
+    margin: 0;
+}
+
+/* Segunda línea del título en verde */
+.res_titulo_container h2 span {
+    color: #007D32;
+}
+
+/* FLECHAS DE NAVEGACIÓN */
+.res_flechas {
+    position: absolute;
+    top: 64px;
+    right: 120px;
+    display: flex;
+    gap: 16px;
+}
+
+.res_flecha {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.res_flecha img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* CARRUSEL (ventana visible) */
+.res_carrusel {
+    width: 1200px;
+    height: 526px;
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Riel que se desplaza */
+.res_track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* CADA SLIDE: imagen + texto */
+.res_slide {
+    flex: 0 0 1200px;
+    width: 1200px;
+    height: 526px;
+    display: flex;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+/* IMAGEN DEL SLIDE */
+.res_imagen {
+    width: 792px;
+    height: 526px;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.res_imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+}
+
+/* CONTENEDOR DEL TEXTO */
+.res_texto {
+    width: 384px;
+    height: 526px;
+    border-radius: 24px;
+    padding: 60px 32px;
+    background-color: #F3F7FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* TEXTO DEL RESULTADO */
+.res_texto p {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0;
+    color: #003366;
+    margin: 0;
+}
+
+/* PORCENTAJES EN NEGRITA */
+.res_texto p span {
+    font-weight: 700;
+    color: #003366;
+}
