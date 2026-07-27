@@ -5,7 +5,8 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* #000000 al 60% */
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(32px);
     display: none;
     justify-content: flex-end;
@@ -18,16 +19,19 @@
     display: flex;
 }
 
-/* Cuadro del Formulario */
+/* Cuadro del formulario. Nunca se pasa del alto de la ventana */
 .modal_contenedor {
     width: 708px;
     height: 632px;
+    max-height: 100vh;
+    max-height: 100dvh;
     background-color: #D5ECF9;
     box-sizing: border-box;
     position: relative;
+    overflow-y: auto;
 }
 
-/* Botón de Cierre (X) */
+/* Botón de cierre (X) */
 .modal_cerrar {
     position: absolute;
     top: 24px;
@@ -46,8 +50,7 @@
     color: #0A2540;
 }
 
-/* Bloque titulo + formulario: 612x456, a 61px del borde superior
-   y 48px del borde izquierdo del .modal_contenedor */
+/* Bloque título + formulario: 612x456 */
 .title_form_container {
     position: absolute;
     top: 61px;
@@ -61,7 +64,6 @@
     gap: 24px;
 }
 
-/* Titulo: "Completa tus datos para acceder al contenido completo." */
 .modal_titulo {
     width: 612px;
     font-weight: 500;
@@ -71,8 +73,7 @@
     color: #003366;
 }
 
-/* El formulario ocupa el resto del bloque, asi el boton queda pegado
-   al borde inferior izquierdo del .title_form_container */
+/* Ocupa el resto del bloque para dejar el botón abajo */
 .modal_form {
     width: 612px;
     flex: 1;
@@ -81,7 +82,7 @@
     align-items: flex-start;
 }
 
-/* Grupo de los 4 inputs (nombre, apellido, celular, correo): gap vertical 16 */
+/* Los 4 inputs, con gap vertical de 16 */
 .modal_form > .modal_fila_doble,
 .modal_form > .modal_campo {
     width: 612px;
@@ -92,7 +93,7 @@
     margin-top: 16px;
 }
 
-/* Nombre y apellido, uno al lado del otro: 612x48, gap 24 */
+/* Nombre y apellido, uno al lado del otro */
 .modal_fila_doble {
     height: 48px;
     opacity: 1;
@@ -104,13 +105,23 @@
     flex: 1;
 }
 
-/* Celular y correo empresarial, uno debajo del otro: cada uno 612x48, gap 4 */
+/* Celular y correo, uno debajo del otro */
 .modal_campo {
     height: 48px;
     opacity: 1;
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+/* Oculta a la vista en escritorio, visible en móvil */
+.modal_label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 .modal_campo input {
@@ -131,8 +142,7 @@
     color: #767676;
 }
 
-/* Habeas data + boton, juntos: 612x132 (24 + gap 60 + 48).
-   margin-top: auto empuja el bloque al fondo del formulario. */
+/* Habeas data + botón: 612x132 */
 .modal_habeas_data {
     width: 612px;
     height: 24px;
@@ -150,10 +160,11 @@
     opacity: 1;
     margin: 0;
     flex-shrink: 0;
+    accent-color: #003366;
 }
 
 .modal_habeas_data label {
-    font-family: var(--font-primary); /* Helvetica Neue */
+    font-family: var(--font-primary);
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
@@ -168,7 +179,7 @@
     text-underline-offset: 0;
 }
 
-/* Boton de envio: es la imagen Button.png (192x48) */
+/* El botón es la imagen Button.png */
 .modal_btn_submit {
     width: 192px;
     height: 48px;
@@ -188,5 +199,90 @@
 .modal_btn_submit img {
     width: 192px;
     height: 48px;
+    display: block;
+}
+
+/* Aviso de error al enviar */
+.modal_estado {
+    width: 612px;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #003366;
+}
+
+.modal_estado.es_error {
+    color: #C0392B;
+}
+
+/* MENSAJE DE GRACIAS */
+.gracias_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(32px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+/* Solo se muestra cuando JS le pone la clase esta_abierto */
+.gracias_overlay.esta_abierto {
+    display: flex;
+}
+
+/* Mismas medidas que la sección impulsa */
+.gracias_contenedor {
+    width: 100%;
+    max-width: 1440px;
+    height: 632px;
+    position: relative;
+    background-color: #D5ECF9;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Centrado vertical */
+.gracias_texto_container {
+    width: 492px;
+    height: 152px;
+    position: absolute;
+    top: 240px;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-sizing: border-box;
+}
+
+.gracias_texto {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 76px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #003366;
+    margin: 0;
+}
+
+/* Misma foto y medidas que .imps_imagen */
+.gracias_imagen {
+    width: 708px;
+    height: 632px;
+    position: absolute;
+    top: 0;
+    left: 732px;
+    overflow: hidden;
+}
+
+.gracias_imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }

@@ -368,13 +368,18 @@ img {
 @media (max-width: 768px) {
 
     /* ---------- HEADER ----------*/
+    /* En columna para que el menú desplegable caiga debajo, no al lado */
     .header {
         height: auto;
         padding: 0;
+        flex-direction: column;
+        align-items: stretch;
     }
 
+    /* Alto automático: crece cuando se abre el menú */
     .header_container {
-        height: 112px;
+        height: auto;
+        min-height: 112px;
         padding: 8px 24px;
         flex-wrap: wrap;
         align-content: center;
@@ -408,8 +413,15 @@ img {
         height: 40px;
     }
 
-    .header_search {
+    /* El menú va entre los iconos y el buscador */
+    .header_menu_movil {
         order: 4;
+        width: 100%;
+        padding: 8px 0 0;
+    }
+
+    .header_search {
+        order: 5;
         width: 100%;
         max-width: none;
     }
@@ -493,8 +505,8 @@ img {
         flex-wrap: nowrap;
         gap: 100px;
 
-        /* La foto llena los 360x1208 y se recorta desde el centro hacia
-           afuera: sin franjas de color. */
+        /* En móvil el diseño usa otra foto */
+        background-image: url('../assets/Images/foto_impulsa.png');
         background-size: cover;
         background-position: center;
     }
@@ -661,6 +673,81 @@ img {
         font-size: 36px;
         line-height: 44px;
     }
+
+    /* ---------- MODAL DE REGISTRO ---------- */
+    /* El cuadro se vuelve fluido */
+    .modal_overlay {
+        justify-content: center;
+        padding: 24px;
+    }
+
+    .modal_contenedor {
+        width: 100%;
+        max-width: 708px;
+        height: auto;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+
+    .modal_cerrar {
+        left: auto;
+        right: 24px;
+    }
+
+    /* Pasa a flujo normal */
+    .title_form_container {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 61px 48px 48px;
+    }
+
+    .modal_titulo,
+    .modal_form,
+    .modal_form > .modal_fila_doble,
+    .modal_form > .modal_campo,
+    .modal_habeas_data {
+        width: 100%;
+    }
+
+    /* Separación explícita hacia el botón */
+    .modal_habeas_data {
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    /* ---------- MENSAJE DE GRACIAS ---------- */
+    /* Foto arriba y texto debajo, igual que en .impulsa */
+    .gracias_contenedor {
+        height: auto;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding-bottom: 48px;
+    }
+
+    .gracias_texto_container,
+    .gracias_imagen {
+        position: static;
+    }
+
+    .gracias_texto_container {
+        width: 100%;
+        height: auto;
+        padding: 0 32px;
+    }
+
+    .gracias_imagen {
+        order: -1;
+        width: 100%;
+        height: 360px;
+    }
+
+    .gracias_texto {
+        font-size: 48px;
+        line-height: 56px;
+    }
 }
 
 /* 3. CELULARES PEQUEÑOS (max-width: 480px) */
@@ -681,7 +768,7 @@ img {
     }
 
     .header_menu_movil {
-        padding: 16px 16px 24px;
+        padding: 8px 0 0;
     }
 
     /* ---------- HERO ---------- */
@@ -832,5 +919,125 @@ img {
     .inv_titulo_container h2 {
         font-size: 28px;
         line-height: 36px;
+    }
+
+    /* ---------- MODAL DE REGISTRO ---------- */
+    /* Contenedor de 360x780 */
+    .modal_overlay {
+        padding: 0;
+    }
+
+    .modal_contenedor {
+        width: 360px;
+        max-width: 100%;
+        height: 780px;
+        max-height: 100vh;
+        opacity: 1;
+    }
+
+    .modal_cerrar {
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+    }
+
+    .title_form_container {
+        height: 100%;
+        padding: 56px 24px 40px;
+        gap: 20px;
+    }
+
+    .modal_titulo {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+
+    /* La etiqueta se muestra encima del input */
+    .modal_label {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip-path: none;
+        white-space: normal;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        color: #003366;
+    }
+
+    /* Nombre y apellido, uno debajo del otro */
+    .modal_fila_doble {
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
+    }
+
+    /* Alto automático: etiqueta + input */
+    .modal_campo {
+        height: auto;
+    }
+
+    .modal_habeas_data {
+        height: auto;
+        align-items: flex-start;
+        margin-top: 24px;
+        margin-bottom: 32px;
+    }
+
+    .modal_habeas_data label {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    /* El botón va centrado */
+    .modal_btn_submit {
+        align-self: center;
+    }
+
+    /* ---------- MENSAJE DE GRACIAS ---------- */
+    .gracias_texto_container {
+        padding: 0 24px;
+    }
+
+    .gracias_imagen {
+        height: 280px;
+    }
+
+    .gracias_texto {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+/* 4. PANTALLAS DE POCA ALTURA (max-height: 720px)
+   El min-width evita pisar los breakpoints de ancho */
+@media (max-height: 720px) and (min-width: 769px) {
+
+    .title_form_container {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 40px 48px;
+    }
+
+    .modal_titulo,
+    .modal_form,
+    .modal_form > .modal_fila_doble,
+    .modal_form > .modal_campo,
+    .modal_habeas_data {
+        width: 100%;
+    }
+
+    /* Separación explícita hacia el botón */
+    .modal_habeas_data {
+        margin-top: 32px;
+        margin-bottom: 40px;
+    }
+
+    .modal_cerrar {
+        left: auto;
+        right: 24px;
     }
 }

@@ -95,18 +95,19 @@
 })();
 
 
-/* Modal de registro (formulario) — punto 2 y 3 de la prueba técnica.
-   Cualquier botón con la clase .js_abrir_registro abre el modal #modal_registro.
-   Hoy están enganchados el botón del hero y el de la sección impulsa.
-   Cuando se cree el markup del modal en index.html, esto ya funciona sin tocar nada. */
+/* Modal de registro. Cualquier botón .js_abrir_registro lo abre */
 (function () {
   const disparadores = document.querySelectorAll('.js_abrir_registro');
   const modal = document.getElementById('modal_registro');
 
   function abrir() {
-    if (!modal) return; // el modal todavía no existe en el HTML
+    if (!modal) return;
+
+    // Siempre arranca en blanco
+    limpiar();
+
     modal.classList.add('esta_abierto');
-    document.body.style.overflow = 'hidden'; // bloquea el scroll del fondo
+    document.body.style.overflow = 'hidden';
   }
 
   function cerrar() {
@@ -115,21 +116,74 @@
     document.body.style.overflow = '';
   }
 
+  function limpiar() {
+    const formulario = modal.querySelector('#formulario_registro');
+    if (formulario) formulario.reset();
+
+    const estado = modal.querySelector('.modal_estado');
+    if (estado) {
+      estado.textContent = '';
+      estado.classList.remove('es_error');
+    }
+  }
+
   disparadores.forEach(function (boton) {
     boton.addEventListener('click', abrir);
   });
 
   if (!modal) return;
 
-  // Cierra con la X, haciendo clic en el fondo oscuro, o con la tecla Escape
   const botonCerrar = modal.querySelector('.js_cerrar_registro');
   if (botonCerrar) botonCerrar.addEventListener('click', cerrar);
 
-  modal.addEventListener('click', function (evento) {
-    if (evento.target === modal) cerrar();
+  /* Cierre al clic por fuera. Se exige mousedown y mouseup sobre el fondo:
+     si no, seleccionar texto y soltar afuera cerraba el modal. */
+  let arranqueEnElFondo = false;
+
+  modal.addEventListener('mousedown', function (evento) {
+    arranqueEnElFondo = evento.target === modal;
+  });
+
+  modal.addEventListener('mouseup', function (evento) {
+    if (arranqueEnElFondo && evento.target === modal) cerrar();
+    arranqueEnElFondo = false;
   });
 
   document.addEventListener('keydown', function (evento) {
     if (evento.key === 'Escape') cerrar();
   });
+
+  // Al guardar, el modal deja paso al mensaje de gracias
+  document.addEventListener('registro:exitoso', cerrar);
+})();
+
+
+/* Mensaje de gracias. Se va a los 3 segundos o al primer clic */
+(function () {
+  const gracias = document.getElementById('gracias_registro');
+
+  if (!gracias) return;
+
+  const DURACION = 3000;
+  let temporizador = null;
+
+  function ocultar() {
+    gracias.classList.remove('esta_abierto');
+    document.body.style.overflow = '';
+    clearTimeout(temporizador);
+    document.removeEventListener('click', ocultar);
+  }
+
+  function mostrar() {
+    gracias.classList.add('esta_abierto');
+    document.body.style.overflow = 'hidden';
+
+    clearTimeout(temporizador);
+    temporizador = setTimeout(ocultar, DURACION);
+
+    // El clic que envió el formulario ya terminó: el guardado es asíncrono
+    document.addEventListener('click', ocultar);
+  }
+
+  document.addEventListener('registro:exitoso', mostrar);
 })();

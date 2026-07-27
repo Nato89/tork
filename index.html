@@ -21,11 +21,11 @@
 
           <div class="logo-search">
                 <div class="header_logo">
-                    <img src="assets/Logotipos/logotipo.svg" alt="Logo TORK" class="logo_img">
+                    <img src="assets/Logotipos/Logotipo.svg" alt="Logo TORK" class="logo_img">
                 </div>
                 
                 <div class="header_search">
-                    <input type="text" placeholder="¿Qué buscas hoy?" aria-label="Buscar">
+                    <input type="search" id="input_busqueda" name="busqueda" placeholder="¿Qué buscas hoy?" aria-label="Buscar">
                     <img src="assets/Iconos/lupa.svg" alt="Icono de búsqueda" class="search_icon">
                 </div> 
             </div>
@@ -41,12 +41,13 @@
                 <span class="cart_count">0</span>
             </button>
          </nav>
-        </div>
 
-        <!-- Menú desplegable del botón hamburguesa (solo móvil) -->
+        <!-- Menú desplegable del botón hamburguesa (solo móvil).
+             Va dentro del container para quedar sobre el buscador -->
         <div class="header_menu_movil" id="header_menu_movil">
             <a href="#" class="nav_link">Ayuda</a>
             <a href="#" class="nav_link">Inicia sesión</a>
+        </div>
         </div>
      </header>
 
@@ -55,7 +56,7 @@
         <section class="hero_section">          
                 
             <div class="hero_brand-tag">
-                <img src="assets/Logotipos/logotipo.svg" alt="Logo TORK Think Ahead" class="hero_logo_img"> 
+                <img src="assets/Logotipos/Logotipo.svg" alt="Logo TORK Think Ahead" class="hero_logo_img"> 
             </div> 
             <div class="hero_text-container">
                 <h1 class="hero_text">
@@ -424,7 +425,7 @@
             <div class="ftr_columna_iconos">
 
                 <div class="ftr_bloque_redes">
-                    <p class="ftr_titulo">Redes sociales</p>
+                    <p class="ftr_titulo">Redes <br> sociales</p>
                     <div class="ftr_iconos_redes">
                         <a href="#" aria-label="Facebook"><img src="assets/Red_iconos/Facebook.png" alt="Facebook"></a>
                         <a href="#" aria-label="LinkedIn"><img src="assets/Red_iconos/li.png" alt="LinkedIn"></a>
@@ -483,23 +484,30 @@
                     
                     <div class="modal_fila_doble">
                         <div class="modal_campo">
-                            <input type="text" id="input_nombre" placeholder="Nombre" required>
+                            <label class="modal_label" for="input_nombre">Nombre(s)</label>
+                            <input type="text" id="input_nombre" name="nombre" placeholder="Nombre" required>
                         </div>
                         <div class="modal_campo">
-                            <input type="text" id="input_apellido" placeholder="Apellido" required>
+                            <label class="modal_label" for="input_apellido">Apellidos</label>
+                            <input type="text" id="input_apellido" name="apellido" placeholder="Apellido" required>
                         </div>
                     </div>
 
                     <div class="modal_campo">
-                        <input type="tel" id="input_celular" placeholder="Celular" required>
+                        <label class="modal_label" for="input_celular">Celular</label>
+                        <input type="text" inputmode="numeric" id="input_celular" name="celular"
+                               placeholder="Celular" required
+                               pattern="[0-9]{7,10}" maxlength="10"
+                               title="Solo números, entre 7 y 10 dígitos">
                     </div>
 
                     <div class="modal_campo">
-                        <input type="email" id="input_email" placeholder="Correo empresarial" required>
+                        <label class="modal_label" for="input_email">Correo empresarial</label>
+                        <input type="email" id="input_email" name="email" placeholder="Correo empresarial" required>
                     </div>
 
                     <div class="modal_habeas_data">
-                        <input type="checkbox" id="input_habeas" required>
+                        <input type="checkbox" id="input_habeas" name="habeas" required>
                         <label for="input_habeas">
                             Al enviar el formulario, acepto la política de <a href="#" target="_blank">Habeas Data</a>
                         </label>
@@ -514,7 +522,23 @@
         </div>
       </div>
 
+      <!-- MENSAJE DE GRACIAS (sale al guardar el registro) -->
+      <div id="gracias_registro" class="gracias_overlay">
+        <div class="gracias_contenedor">
+
+            <div class="gracias_texto_container">
+                <p class="gracias_texto">¡Gracias por registrarte!</p>
+            </div>
+
+            <div class="gracias_imagen">
+                <img src="assets/Images/foto_impulsa.png" alt="Asesora de negocios Tork">
+            </div>
+
+        </div>
+      </div>
+
         <script src="js/main.js"></script>
+        <script type="module" src="js/registro.service.js"></script>
       </body>
       </html>
 

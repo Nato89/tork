@@ -10,8 +10,8 @@
 @import 'impulsa_styles.css';
 @import 'footer_styles.css';
 
-/* Responsive */
-@import 'responsive.css';
-
 /* Formulario */
 @import 'form_styles.css';
+
+/* Responsive (debe ir al final para poder sobrescribir) */
+@import 'responsive.css';

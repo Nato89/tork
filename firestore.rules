@@ -1,0 +1,15 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Registros del formulario de la landing.
+    // Es un formulario público: se permite crear, pero no leer ni modificar.
+    // Los registros se consultan desde la consola de Firebase.
+    match /registros/{documento} {
+      allow create: if request.resource.data.habeas == true;
+      allow read, update, delete: if false;
+    }
+
+  }
+}
