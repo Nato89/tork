@@ -1,6 +1,6 @@
 # Landing Page Tork + Firebase
 
-Prueba técnica frontend para Obvio Latam: maquetación responsive de una landing page a partir de un diseño de Figma, con un formulario de captura conectado a Firebase Firestore.
+Prueba técnica frontend: maquetación responsive de una landing page a partir de un diseño de Figma, con un formulario de captura conectado a Firebase Firestore.
 
 ## Tecnologías
 
